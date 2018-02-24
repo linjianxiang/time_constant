@@ -8,15 +8,11 @@ from pandas import read_csv
 import pandas as pd
 import numpy as np
 #import data
-series = pd.read_csv('testing_data.csv',header=1, parse_dates=[0])
-print(series.head())
-# series.plot()
-# pyplot.show()
-value = pd.DataFrame(series.values)
-value.index = pd.to_datetime(value.index)
-print(value.head())
-value.plot()
-pyplot.show()
+# series = pd.read_csv('testing_data.csv',header=None)
+# Input = series[0]
+# Output = series[1]
+
+# series = pd.read_csv('daily-minimum-temperatures.csv',header=None)
 # # split dataset
 # X = series.values
 # train, test = X[1:len(X)-7], X[len(X)-7:]
@@ -37,18 +33,18 @@ pyplot.show()
 # def parser(x):
 # 	return pd.datetime.strptime(x, '%Y-%m-%d')
  
-# series = pd.read_csv('daily-minimum-temperatures.csv', header=0, parse_dates=[0], index_col=0, squeeze=True,date_parser=lambda x: pd.datetime.strptime(x, '%m/%d/%Y'))
-# print(series.head())
-# series.plot()
-# pyplot.show()
-# # model = AR(series)
-# # model_fit = model.fit()
-# a =1
+series = pd.read_csv('daily-minimum-temperatures.csv', header=0, parse_dates=[0], index_col=0, squeeze=True,date_parser=lambda x: pd.datetime.strptime(x, '%m/%d/%Y'))
+print(series.head())
+series.plot()
+pyplot.show()
+# model = AR(series)
+# model_fit = model.fit()
+a =1
 
-# value = pd.DataFrame(series.values)
-# value.index = pd.to_datetime(value.index)
-# a = value[1:len(value)][0]
-# b = value[1:len(value)][1]
-# a_model = AR(a)
-# a_fit = a_model.fit()
-# b
+value = pd.DataFrame(series.values)
+value.index = pd.to_datetime(value.index)
+a = value[1:len(value)][0]
+b = value[1:len(value)][1]
+a_model = AR(a)
+a_fit = a_model.fit()
+b
