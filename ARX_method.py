@@ -296,11 +296,11 @@ nb = 1 #Order of polynomial B(q) for ARX model
 filename = 'Simulation_Output_Model_ReactorO.csv'
 num_output = 3
 plot_size = 500
-# delay_arxstructd(filename,na,nb,maxdelay,num_output,plot_size)
+delay_arxstructd(filename,na,nb,maxdelay,num_output,plot_size)
 
 
-AIC_test_data_size = 500 #
-arx_aic_test(filename,na,nb,maxdelay,num_output,5-num_output,AIC_test_data_size)
+# AIC_test_data_size = 500 #
+# arx_aic_test(filename,na,nb,maxdelay,num_output,5-num_output,AIC_test_data_size)
 
 #########input CSV file structure###########
 # The data should be in following format
